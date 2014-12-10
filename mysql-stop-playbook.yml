@@ -1,0 +1,8 @@
+- hosts: web-servers
+  sudo: yes
+  tasks:
+    - name: be sure mysql-server is installed
+      yum: name=mysql-server state=installed
+
+    - name: be sure mysqld is running and enabled
+      service: name=mysqld state=stopped enabled=yes
